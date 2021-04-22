@@ -1,4 +1,5 @@
 from player import Player
+from weapon import Weapon
 #class Player:
 
     #pseudo = "Dragfy"
@@ -22,9 +23,13 @@ from player import Player
 
 #player2 = Player("EE", 50, 5)
 
+knife = Weapon("Couteau", 3)
 
 
 player1 = Player("DD", 50, 5)
+
+player1.set_weapon(knife)
+
 player2 = Player("EE", 50, 5)
 
 player1.attackplayer(player2)

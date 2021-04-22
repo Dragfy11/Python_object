@@ -4,6 +4,7 @@ class Player:
         self.pseudo = pseudo
         self.health = health
         self.attack = attack
+        self.weapon = None
         print("Bienvenue au joueur", pseudo, " / Points de vie: ", health, " / Attaque: ", attack)
 # methode
 
@@ -22,4 +23,11 @@ class Player:
 # attaquer un joueur
 
     def attackplayer(self, target_player):
-        target_player.damage(self.attack)
+        damage = self.attack
+
+        #si le joueur a une arme
+        if self.has_weapon():
+            #ajout les dégàts de l'arme au point d'attaque du joueur
+            damage += self.weapon.get_damage_amount()
+        
+        target_player.damage(damage)
